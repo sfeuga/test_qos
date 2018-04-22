@@ -1,24 +1,20 @@
-# README
+# Test QOS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This repo is a fake Web service [to review my ability](https://gist.github.com/alchimere/e41f714a45e12fd9fee522be88ebb05f) on Ruby and Ruby on Rails.
+This is also my first test in Rails :)
 
-* Ruby version
+I hope you'll enjoy it.
+Best, Stéphane FEUGA
 
-* System dependencies
+------------
 
+## Technical informations
+
+* This code base was released on Ruby 2.5.1 and Rails 5.2.0
 * Configuration
-
 * Database creation
-
 * Database initialization
-
 * How to run the test suite
-
 * Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
-
-* ...
