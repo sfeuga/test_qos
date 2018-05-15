@@ -14,7 +14,11 @@ class SensorController < ApplicationController
                  Sensor.find_all
                end
 
-    json_response(@sensors)
+    if @sensors.any?
+      json_response(@sensors)
+    else
+      not_found
+    end
   end
 
   # GET /sensor/:id

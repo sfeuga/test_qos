@@ -15,12 +15,12 @@
 ActiveRecord::Schema.define(version: 20_180_422_114_352) do
   create_table 'sensor_values', force: :cascade do |t|
     t.integer 'deleted', default: 0
-    t.integer 'sensors_id', null: false
+    t.integer 'sensor_id', null: false
     t.integer 'time_unix', null: false
     t.integer 'value', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['sensors_id'], name: 'index_sensor_values_on_sensors_id'
+    t.index ['sensor_id'], name: 'index_sensor_values_on_sensor_id'
   end
 
   create_table 'sensors', force: :cascade do |t|

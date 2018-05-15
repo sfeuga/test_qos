@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   resources :sensor do
-    resources :value
+    resources :values
   end
 end
