@@ -12,9 +12,7 @@ Best, Stéphane FEUGA
 ## Technical informations
 
 * This code base was released on Ruby 2.5.1 and Rails 5.2.0
-* Configuration
-* Database creation
-* Database initialization
-* How to run the test suite
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
+* No special Configuration (use sqlite)
+* Database initialization: rails db:migrate
+* Just run `bundle exec rspec` to run tests
+* Deployment instructions: There is no `docker-compose.yml` for now
