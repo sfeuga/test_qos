@@ -14,5 +14,5 @@ Best, Stéphane FEUGA
 * This code base was released on Ruby 2.5.1 and Rails 5.2.0
 * No special Configuration (use sqlite)
 * Database initialization: rails db:migrate
-* Just run `bundle exec rspec` to run tests
+* Just run `bundle exec rspec` to run tests and/or use postman with [this collection](https://gist.github.com/sfeuga/dfd45dc811165cfc58dd6b5eb78ca99b) to test the service
 * Deployment instructions: There is no `docker-compose.yml` for now
