@@ -3,10 +3,10 @@
 ##
 # SensorController class
 #
-class SensorController < ApplicationController
+class SensorsController < ApplicationController
   before_action :set_sensor, only: %i[show update destroy]
 
-  # GET /sensor
+  # GET /sensors
   def index
     @sensors = if params[:deleted] == 'true'
                  Sensor.deleted
@@ -21,26 +21,26 @@ class SensorController < ApplicationController
     end
   end
 
-  # GET /sensor/:id
+  # GET /sensors/:id
   def show
     json_response(@sensor)
   end
 
-  # POST /sensor
+  # POST /sensors
   def create
     @sensor = Sensor.create!(sensor_params)
 
     json_response(@sensor, :created)
   end
 
-  # PUT /sensor/:id
+  # PUT /sensors/:id
   def update
     @sensor = Sensor.update(sensor_params)
 
     head :no_content
   end
 
-  # DELETE /sensor/:id
+  # DELETE /sensors/:id
   def destroy
     @sensor.destroy
 
