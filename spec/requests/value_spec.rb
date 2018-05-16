@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Sensor Value API', type: :request do
+RSpec.describe 'Sensors Value API', type: :request do
   # initialize test data
   let!(:sensor) { create(:sensor) }
   let!(:sensor_values) { create_list(:sensor_value, 10, sensor_id: sensor.id) }
@@ -10,9 +10,9 @@ RSpec.describe 'Sensor Value API', type: :request do
   let(:id) { sensor_values.first.id }
 
   # Test suite for GET /sensors/:sensor_id/values
-  describe 'GET /sensor/:sensor_id/values' do
+  describe 'GET /sensors/:sensor_id/values' do
     # make HTTP get request before each example
-    before { get "/sensor/#{sensor_id}/values" }
+    before { get "/sensors/#{sensor_id}/values" }
 
     context 'when sensor exists' do
       it 'returns status code 200' do
@@ -39,9 +39,9 @@ RSpec.describe 'Sensor Value API', type: :request do
     end
   end
 
-  # Test suite for GET /sensor/:sensor_id/values/:id
-  describe 'GET /sensor/:sensor_id/values/:id' do
-    before { get "/sensor/#{sensor_id}/values/#{id}" }
+  # Test suite for GET /sensors/:sensor_id/values/:id
+  describe 'GET /sensors/:sensor_id/values/:id' do
+    before { get "/sensors/#{sensor_id}/values/#{id}" }
 
     context 'when sensor exists' do
       it 'returns status code 200' do
@@ -67,12 +67,12 @@ RSpec.describe 'Sensor Value API', type: :request do
     end
   end
 
-  # Test suite for POST /sensor/:sensor_id/values
-  describe 'POST /sensor/:sensor_id/values' do
+  # Test suite for POST /sensors/:sensor_id/values
+  describe 'POST /sensors/:sensor_id/values' do
     let(:valid_attributes) { { value: '42', done: false } }
 
     context 'when request attributes are valid' do
-      before { post "/sensor/#{sensor_id}/values", params: valid_attributes }
+      before { post "/sensors/#{sensor_id}/values", params: valid_attributes }
 
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
@@ -80,7 +80,7 @@ RSpec.describe 'Sensor Value API', type: :request do
     end
 
     context 'when an invalid request' do
-      before { post "/sensor/#{sensor_id}/values", params: {} }
+      before { post "/sensors/#{sensor_id}/values", params: {} }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -92,11 +92,11 @@ RSpec.describe 'Sensor Value API', type: :request do
     end
   end
 
-  # Test suite for PUT /sensor/:sensor_id/values/:id
-  describe 'PUT /sensor/:sensor_id/values/:id' do
+  # Test suite for PUT /sensors/:sensor_id/values/:id
+  describe 'PUT /sensors/:sensor_id/values/:id' do
     let(:valid_attributes) { { value: '24' } }
 
-    before { put "/sensor/#{sensor_id}/values/#{id}", params: valid_attributes }
+    before { put "/sensors/#{sensor_id}/values/#{id}", params: valid_attributes }
 
     context 'when value exists' do
       it 'updates the record' do
@@ -123,8 +123,8 @@ RSpec.describe 'Sensor Value API', type: :request do
   end
 
   # Test suite for DELETE /sensor/:sensor_id/values/:id
-  describe 'DELETE /sensor/:sensor_id/values/:id' do
-    before { delete "/sensor/#{sensor_id}/values/#{id}" }
+  describe 'DELETE /sensors/:sensor_id/values/:id' do
+    before { delete "/sensors/#{sensor_id}/values/#{id}" }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)

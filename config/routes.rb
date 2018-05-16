@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :sensor do
+  resources :sensors do
     resources :values
   end
 end
